@@ -13,7 +13,7 @@ if _swig_python_version_info >= (2, 7, 0):
         try:
             return importlib.import_module(mname)
         except ImportError:
-            return importlib.import_module('_polyiou')
+            return importlib.import_module('_polyiou.cpython-37m-x86_64-linux-gnu.so')
     _polyiou = swig_import_helper()
     del swig_import_helper
 elif _swig_python_version_info >= (2, 6, 0):
@@ -22,7 +22,7 @@ elif _swig_python_version_info >= (2, 6, 0):
         import imp
         fp = None
         try:
-            fp, pathname, description = imp.find_module('_polyiou', [dirname(__file__)])
+            fp, pathname, description = imp.find_module('_polyiou.cpython-37m-x86_64-linux-gnu.so', [dirname(__file__)])
         except ImportError:
             import _polyiou
             return _polyiou
