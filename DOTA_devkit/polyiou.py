@@ -11,7 +11,7 @@ if _swig_python_version_info >= (2, 7, 0):
         pkg = __name__.rpartition('.')[0]
         mname = '.'.join((pkg, '_polyiou')).lstrip('.')
         try:
-            return importlib.import_module(mname)
+            return importlib.import_module('_polyiou.cpython-37m-x86_64-linux-gnu.so')
         except ImportError:
             return importlib.import_module('_polyiou.cpython-37m-x86_64-linux-gnu.so')
     _polyiou = swig_import_helper()
