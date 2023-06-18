@@ -172,7 +172,7 @@ def _dist_train(model, dataset, cfg, validate=False):
     # build runner
     optimizer = build_optimizer(model, cfg.optimizer)
     runner = Runner(model, batch_processor, optimizer, cfg.work_dir,
-                    cfg.log_level)
+                    get_root_logger(cfg.log_level))
 
     # fp16 setting
     fp16_cfg = cfg.get('fp16', None)
