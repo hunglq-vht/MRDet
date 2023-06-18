@@ -11,23 +11,23 @@ if _swig_python_version_info >= (2, 7, 0):
         pkg = __name__.rpartition('.')[0]
         mname = '.'.join((pkg, '_polyiou')).lstrip('.')
         try:
-            return importlib.import_module('_polyiou.cpython-37m-x86_64-linux-gnu.so')
+            return importlib.import_module(mname)
         except ImportError:
-            return importlib.import_module('_polyiou.cpython-37m-x86_64-linux-gnu.so')
+            return importlib.import_module('_polyiou')
     _polyiou = swig_import_helper()
     del swig_import_helper
 elif _swig_python_version_info >= (2, 6, 0):
     def swig_import_helper():
         from os.path import dirname
-        import importlib
+        import imp
         fp = None
         try:
-            fp, pathname, description = importlib.find_module('_polyiou.cpython-37m-x86_64-linux-gnu.so', [dirname(__file__)])
+            fp, pathname, description = imp.find_module('_polyiou', [dirname(__file__)])
         except ImportError:
             import _polyiou
             return _polyiou
         try:
-            _mod = importlib.load_module('_polyiou.cpython-37m-x86_64-linux-gnu.so', fp, pathname, description)
+            _mod = imp.load_module('_polyiou', fp, pathname, description)
         finally:
             if fp is not None:
                 fp.close()
@@ -277,5 +277,3 @@ def iou_poly(p, q):
     return _polyiou.iou_poly(p, q)
 iou_poly = _polyiou.iou_poly
 # This file is compatible with both classic and new-style classes.
-
-
