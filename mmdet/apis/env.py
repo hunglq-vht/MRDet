@@ -65,7 +65,7 @@ def set_random_seed(seed):
 
 def get_root_logger(log_level=logging.INFO):
     logger = logging.getLogger()
-    logger2 = logging.Logger(level=log_level)
+    logger2 = logging.Logger(name="Log train", level=log_level)
     if not logger.hasHandlers():
         logging.basicConfig(
             format='%(asctime)s - %(levelname)s - %(message)s',
