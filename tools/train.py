@@ -10,6 +10,8 @@ from mmdet.apis import (get_root_logger, init_dist, set_random_seed,
                         train_detector)
 from mmdet.datasets import build_dataset
 from mmdet.models import build_detector
+import warnings
+warnings.filterwarnings("ignore", category=UserWarning)
 
 
 def parse_args():
